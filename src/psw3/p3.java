@@ -1,0 +1,66 @@
+package psw3;
+
+import java.util.*;
+
+public class p3 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		while ((input.hasNextInt())) {
+			int n = input.nextInt();
+			boolean done = false;
+			List<Integer> list = new ArrayList<>();
+			for (int i = 0; i < n; i++) {
+				int mush = input.nextInt();
+				list.add(mush);
+			}
+			String command = input.next();
+			int i = 0;
+			while (i < command.length() && !done) {
+				switch (command.charAt(i)) {
+				case 'R':
+					if (list.isEmpty()) {
+						System.out.println("No mushrooms!");
+						done = true;
+						break;
+					}
+					Collections.reverse(list);
+					break;
+				case 'B':
+					if (list.isEmpty()) {
+						System.out.println("No mushrooms!");
+						done = true;
+						break;
+					}
+					int max = Collections.max(list);
+					int maxIndex = list.indexOf(max);
+					list.remove(maxIndex);
+					break;
+				case 'S':
+					if (list.isEmpty()) {
+						System.out.println("No mushrooms!");
+						done = true;
+						break;
+					}
+					int min = Collections.min(list);
+					int minIndex = list.indexOf(min);
+					list.remove(minIndex);
+					break;
+				default:
+					System.out.println("Wrong Command!");
+					done = true;
+				}
+				i++;
+			}
+			if (list.isEmpty() && !done)
+				System.out.println("Empty!");
+			else if (!done) {
+				for (int j = 0; j < list.size(); j++) {
+					System.out.print(list.get(j) + " ");
+				}
+				System.out.println();
+			}
+		}
+		input.close();
+	}
+}
