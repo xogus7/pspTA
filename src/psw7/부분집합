@@ -2,7 +2,7 @@ package psw7;
 
 import java.util.*;
 
-public class p1 {
+public class p1 { // ë¶€ë¶„ì§‘í•©
 	private static char[] s;
 	private static boolean[] check;
 	private static int n;
@@ -15,7 +15,7 @@ public class p1 {
 		Arrays.sort(s);
 		combination(0);
 	}
-	// nCr »çÀü¼ø
+	// nCr ì‚¬ì „ìˆœ
 	public static void combination(int curr) {
 		if (curr == s.length) {
 			int select = 0;
