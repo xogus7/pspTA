@@ -2,7 +2,7 @@ package psw2;
 
 import java.io.*;
 
-public class p2 {
+public class p2 {	// ì¹´ë“œë½‘ê¸° 2
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -11,24 +11,24 @@ public class p2 {
 			int[] tom = new int[26];
 			int[] jerry = new int[26];
 			int tMax = 0, jMax = 0, tMaxin = 0, jMaxin = 0;
-			// °¡Áö°í ÀÖ´Â °°Àº Ä«µå °³¼ö
+			// ê°€ì§€ê³  ìˆëŠ” ê°™ì€ ì¹´ë“œ ê°œìˆ˜
 			for (int i = 0; i < 5; i++)
 				tom[s.charAt(i) - 'A']++;
 			for (int i = 6; i < 11; i++)
 				jerry[s.charAt(i) - 'A']++;
 			for (int i = 0; i < 26; i++) {
 				if (tMax <= tom[i]) {
-					tMax = tom[i];	// °°Àº Ä«µåÀÇ °¡Àå Å« °³¼ö
-					tMaxin = i;		// ÇØ´ç Ä«µåÀÇ ¾ËÆÄºª
+					tMax = tom[i];	// ê°™ì€ ì¹´ë“œì˜ ê°€ì¥ í° ê°œìˆ˜
+					tMaxin = i;		// í•´ë‹¹ ì¹´ë“œì˜ ì•ŒíŒŒë²³
 				}
 				if (jMax <= jerry[i]) {
 					jMax = jerry[i];
 					jMaxin = i;
 				}
 			}
-			if(tMax <= 1 && jMax <= 1) System.out.println("Draw"); // µÑ ´Ù 2ÀåÀÌ»ó °°Àº Ä«µå°¡ ¾øÀ» °æ¿ì
+			if(tMax <= 1 && jMax <= 1) System.out.println("Draw"); // ë‘˜ ë‹¤ 2ì¥ì´ìƒ ê°™ì€ ì¹´ë“œê°€ ì—†ì„ ê²½ìš°
 			else {
-				if (tMax == jMax)	// °°Àº Ä«µåÀÇ °³¼ö°¡ ¶È°°À» °æ¿ì ÇØ´ç Ä«µåÀÇ ¾ËÆÄºª ºñ±³
+				if (tMax == jMax)	// ê°™ì€ ì¹´ë“œì˜ ê°œìˆ˜ê°€ ë˜‘ê°™ì„ ê²½ìš° í•´ë‹¹ ì¹´ë“œì˜ ì•ŒíŒŒë²³ ë¹„êµ
 					if (tMaxin == jMaxin) System.out.println("Draw");
 					else if (tMaxin > jMaxin) System.out.println("Tom");
 					else System.out.println("Jerry");
