@@ -3,36 +3,36 @@ package psw2;
 import java.io.*;
 import java.util.*;
 
-public class p3 {
+public class p3 {	// bigram
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String s;
 		while ((s = br.readLine()) != null) {
-			Map<String, Integer> map = new HashMap<String, Integer>(); // mapÅëÇØ ºóµµ¼ö ¼¼±â
-			List<String> list = new ArrayList<String>(); // ºóµµ¼ö°¡ °°Àº bigramµé
+			Map<String, Integer> map = new HashMap<String, Integer>(); // mapí†µí•´ ë¹ˆë„ìˆ˜ ì„¸ê¸°
+			List<String> list = new ArrayList<String>(); // ë¹ˆë„ìˆ˜ê°€ ê°™ì€ bigramë“¤
 			String bigram = "";
 			int max = 0;
 			for (int i = 0; i < s.length() - 1; i++) {
 				if (s.charAt(i) != ' ' && s.charAt(i + 1) != ' ' && s.charAt(i) != ',' && s.charAt(i + 1) != ',' ) {
-					bigram = s.substring(i, i + 2); // ¾ËÆÄºª µÎ ±ÛÀÚ¾¿ ÀÚ¸£±â
-					if (map.containsKey(bigram))	// ÀÌÀü¿¡ ÀÌ¹Ì µîÀå Çß´Ù¸é
-						map.put(bigram, map.get(bigram) + 1); // ºóµµ¼ö Áõ°¡
+					bigram = s.substring(i, i + 2); // ì•ŒíŒŒë²³ ë‘ ê¸€ìì”© ìë¥´ê¸°
+					if (map.containsKey(bigram))	// ì´ì „ì— ì´ë¯¸ ë“±ì¥ í–ˆë‹¤ë©´
+						map.put(bigram, map.get(bigram) + 1); // ë¹ˆë„ìˆ˜ ì¦ê°€
 					else
-						map.put(bigram, 1);	// ¾øÀ¸¸é map¿¡ Ãß°¡
+						map.put(bigram, 1);	// ì—†ìœ¼ë©´ mapì— ì¶”ê°€
 				}
 			}
 			if(max <= 1) {
 				System.out.println("Not present");
 				continue;
 			}
-			// °¡Àå ¸¹ÀÌ µîÀåÇÑ bigramµéÀ» list¿¡ Ãß°¡
+			// ê°€ì¥ ë§ì´ ë“±ì¥í•œ bigramë“¤ì„ listì— ì¶”ê°€
 			for (String key : map.keySet()) {
 				int value = map.get(key);
 				if (value == max)
 					list.add(key);
 			}
-			Collections.sort(list);	// »çÀü¼øÀ¸·Î Á¤·Ä
+			Collections.sort(list);	// ì‚¬ì „ìˆœìœ¼ë¡œ ì •ë ¬
 			for(int i = 0; i < list.size(); i++) {
 				System.out.print(list.get(i));
 				if(i != list.size() - 1)
