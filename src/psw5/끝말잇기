@@ -3,27 +3,27 @@ package psw5;
 import java.io.*;
 import java.util.*;
 
-public class p2 {
+public class p2 { // 
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n; // ´Ü¾î ¼ö
-		String s; // ÀÔ·Â ¹®Àå
+		int n; // ë‹¨ì–´ ìˆ˜
+		String s; // ì…ë ¥ ë¬¸ì¥
 		String word;
 		while ((s = br.readLine()) != null) {
-			Set<String> set = new HashSet<>(); // Áßº¹ È®ÀÎ
-			StringTokenizer st = new StringTokenizer(s); // ÀÔ·Â¹ŞÀº ¹®Àå °ø¹é ±âÁØÀ¸·Î ÀÚ¸£±â
-			StringBuilder sb = new StringBuilder();	// Ãâ·Â¹®
+			Set<String> set = new HashSet<>(); // ì¤‘ë³µ í™•ì¸
+			StringTokenizer st = new StringTokenizer(s); // ì…ë ¥ë°›ì€ ë¬¸ì¥ ê³µë°± ê¸°ì¤€ìœ¼ë¡œ ìë¥´ê¸°
+			StringBuilder sb = new StringBuilder();	// ì¶œë ¥ë¬¸
 			n = Integer.parseInt(st.nextToken());
 			for (int i = 0; i < n; i++) {
-				word = st.nextToken();	// ÇöÀç ´Ü¾î
+				word = st.nextToken();	// í˜„ì¬ ë‹¨ì–´
 				if (i != 0) {
-					// Áßº¹ ´Ü¾î°¡ ¾Æ´Ï¸ç ³¡¸»ÀÕ±â°¡ ¼º°øÀÌ¸é
+					// ì¤‘ë³µ ë‹¨ì–´ê°€ ì•„ë‹ˆë©° ëë§ì‡ê¸°ê°€ ì„±ê³µì´ë©´
 					if (set.add(word) && word.charAt(0) == sb.charAt(sb.length() - 1))
 						sb.append(" " + word);
 					else
 						break;
-				} else { // Ã¹ ´Ü¾î Ãß°¡
+				} else { // ì²« ë‹¨ì–´ ì¶”ê°€
 					sb.append(word);
 					set.add(word);
 				}
