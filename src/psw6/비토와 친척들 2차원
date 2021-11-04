@@ -8,11 +8,11 @@ class Point implements Comparable<Point> {
 	public Point(int x, int y, int vitoX, int vitoY) {
 		this.x = x;
 		this.y = y;
-		this.distance = Math.abs(x - vitoX) + Math.abs(y - vitoY); // ºñÅä¿ÍÀÇ °Å¸®
+		this.distance = Math.abs(x - vitoX) + Math.abs(y - vitoY); // ë¹„í† ì™€ì˜ ê±°ë¦¬
 	}
 
-	public int compareTo(Point o) { // °´Ã¼ Á¤·Ä ±âÁØ ÀçÁ¤ÀÇ
-		return this.distance - o.distance; // ÀÌµ¿°Å¸® ¿À¸§Â÷¼ø
+	public int compareTo(Point o) { // ê°ì²´ ì •ë ¬ ê¸°ì¤€ ì¬ì •ì˜
+		return this.distance - o.distance; // ì´ë™ê±°ë¦¬ ì˜¤ë¦„ì°¨ìˆœ
 	}
 
 	public String toString() {
@@ -20,33 +20,33 @@ class Point implements Comparable<Point> {
 	}
 }
 
-public class p2 {
+public class p2 { // ë¹„í† ì™€ ì¹œì²™ë“¤ 2
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		int n = input.nextInt(); // Áı ¼ö
-		int m = input.nextInt(); // Ãâ·Â ÇÒ ¼ö
+		int n = input.nextInt(); // ì§‘ ìˆ˜
+		int m = input.nextInt(); // ì¶œë ¥ í•  ìˆ˜
 		int[] x = new int[n];
 		int[] y = new int[n];
-		int sum = 0;	// °Å¸® ÃÑ ÇÕ
-		Point[] point = new Point[n]; // °¢ ÁıÀÇ ÁÂÇ¥
+		int sum = 0;	// ê±°ë¦¬ ì´ í•©
+		Point[] point = new Point[n]; // ê° ì§‘ì˜ ì¢Œí‘œ
 		for (int i = 0; i < n; i++) {
 			x[i] = input.nextInt();
 			y[i] = input.nextInt();
 		}
-		int vitoX = quickSort(x.clone()); // Ä£Ã´ÁıÀÇ xÁÂÇ¥ Áß¾Ó°ª
-		int vitoY = quickSort(y.clone()); // yÁÂÇ¥ Áß¾Ó°ª
+		int vitoX = quickSort(x.clone()); // ì¹œì²™ì§‘ì˜ xì¢Œí‘œ ì¤‘ì•™ê°’
+		int vitoY = quickSort(y.clone()); // yì¢Œí‘œ ì¤‘ì•™ê°’
 		for (int i = 0; i < n; i++) {
-			point[i] = new Point(x[i], y[i], vitoX, vitoY); // Ä£ÀûÁı ÁÂÇ¥ ÀÔ·Â
-			sum += point[i].distance;						// °Å¸® ´õÇÏ±â
+			point[i] = new Point(x[i], y[i], vitoX, vitoY); // ì¹œì ì§‘ ì¢Œí‘œ ì…ë ¥
+			sum += point[i].distance;						// ê±°ë¦¬ ë”í•˜ê¸°
 		}
-		Arrays.sort(point);	// ÀçÁ¤ÀÇÇÑ ±âÁØ´ë·Î Á¤·Ä
+		Arrays.sort(point);	// ì¬ì •ì˜í•œ ê¸°ì¤€ëŒ€ë¡œ ì •ë ¬
 		System.out.println(sum);
 		for (int i = 0; i < m; i++)
 			System.out.println(point[i]);
 	}
 
-	/* quickSort ±¸Çö return: Áß¾Ó°ª */
+	/* quickSort êµ¬í˜„ return: ì¤‘ì•™ê°’ */
 	private static void swap(int[] a, int i, int j) {
 		int temp = a[i];
 		a[i] = a[j];
