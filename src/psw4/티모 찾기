@@ -2,7 +2,7 @@ package psw4;
 
 import java.io.*;
 
-public class p3 {
+public class p3 { // í‹°ëª¨ ì°¾ê¸°
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int t = Integer.parseInt(br.readLine());
@@ -16,7 +16,7 @@ public class p3 {
 				line = br.readLine();
 				grid[i] = line.toCharArray();
 			}
-			searchTeemo(grid, "TEEMO");	// °Ë»ç ½ÃÀÛ
+			searchTeemo(grid, "TEEMO");	// ê²€ì‚¬ ì‹œìž‘
 			for (int i = 0; i < grid.length; i++) {
 				for (int j = 0; j < grid[i].length; j++)
 					System.out.print(grid[i][j]);
@@ -41,15 +41,15 @@ public class p3 {
 							different += 2;
 							continue;
 						}
-						// ´ë¼Ò¹®ÀÚ ÅëÀÏ, ¼Ò¹®ÀÚÀÏ °æ¿ì 32¸¸Å­ »©¼­ ´ë¹®ÀÚ°ªÀ¸·Î ¹Ù²ÛµÚ °Ë»ç
+						// ëŒ€ì†Œë¬¸ìž í†µì¼, ì†Œë¬¸ìžì¼ ê²½ìš° 32ë§Œí¼ ë¹¼ì„œ ëŒ€ë¬¸ìžê°’ìœ¼ë¡œ ë°”ê¾¼ë’¤ ê²€ì‚¬
 						char c = (char) (grid[row][col] < 'a' ? grid[row][col] : grid[row][col] - 32);
-						if (word.charAt(l) != c) { // ´Ù¸¥ ±ÛÀÚ¸é
+						if (word.charAt(l) != c) { // ë‹¤ë¥¸ ê¸€ìžë©´
 							different++;
 						}
-						row += dr[k]; // ÇØ´ç ¹æÇâÀ¸·Î °è¼Ó °Ë»ç
+						row += dr[k]; // í•´ë‹¹ ë°©í–¥ìœ¼ë¡œ ê³„ì† ê²€ì‚¬
 						col += dc[k];
 					}
-					if (different <= 1) { // ÇÑ±ÛÀÚ ÀÌÇÏ·Î ´Ù¸¦ °æ¿ì
+					if (different <= 1) { // í•œê¸€ìž ì´í•˜ë¡œ ë‹¤ë¥¼ ê²½ìš°
 						row = i;
 						col = j;
 						for (int l = 0; l < word.length(); l++) {
