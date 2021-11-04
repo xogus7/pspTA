@@ -2,16 +2,16 @@ package psw3;
 
 import java.util.Scanner;
 
-public class p1 {
+public class p1 {	// ë™ë§¹íœ´ì—…
 	public static void main(String[] args) throws Exception {
 		Scanner input = new Scanner(System.in);
 		String[] week = { "SAT", "SUN", "Mon", "Tue", "Wed", "Thu", "Fri" };
 		int t = input.nextInt();
 		while (t-- > 0) {
-			int n = input.nextInt(); // ³¯Â¥ ¼ö
-			int lost = 0;			 // ÈŞÀÏ ¼ö
-			int p = input.nextInt(); // Á¤´ç ¼ö
-			boolean[][] partys = new boolean[p + 1][n + 1]; // ¹®Á¦¿¡ ³ª¿Â Ç¥ÀÇ Á¤´çµéÀ» ±×´ë·Î Ç¥Çö
+			int n = input.nextInt(); // ë‚ ì§œ ìˆ˜
+			int lost = 0;			 // íœ´ì¼ ìˆ˜
+			int p = input.nextInt(); // ì •ë‹¹ ìˆ˜
+			boolean[][] partys = new boolean[p + 1][n + 1]; // ë¬¸ì œì— ë‚˜ì˜¨ í‘œì˜ ì •ë‹¹ë“¤ì„ ê·¸ëŒ€ë¡œ í‘œí˜„
 			for (int i = 1; i <= p; i++) {
 				int hartalsNum = input.nextInt();
 				for (int j = 1; j * hartalsNum <= n; j++) {
@@ -20,16 +20,16 @@ public class p1 {
 					partys[i][j * hartalsNum] = true;
 				}
 			}
-			boolean[] hartals = new boolean[n + 1]; // ÇØ´ç ³¯Â¥°¡ µ¿¸Í ÈŞ¾÷ÀÏÀÎÁö ¾Æ´ÑÁö ÀúÀå
+			boolean[] hartals = new boolean[n + 1]; // í•´ë‹¹ ë‚ ì§œê°€ ë™ë§¹ íœ´ì—…ì¼ì¸ì§€ ì•„ë‹Œì§€ ì €ì¥
 			for (int j = 1; j <= n; j++) {
-				int h = 0;	// j¹øÂ° ³¯¿¡ ÈŞ¾÷ ÃßÁø ¼ö
+				int h = 0;	// jë²ˆì§¸ ë‚ ì— íœ´ì—… ì¶”ì§„ ìˆ˜
 				for (int i = 1; i <= p; i++) {
 					if (partys[i][j])
 						h++;
 				}
-				if (h > p / 2 || ((p & 1) == 0 && h >= p / 2)) { // ¹İ ÀÌ»ó Âù¼ºÇÏ¸é
-					lost++;	// µ¿¸Í ÈŞ¾÷À¸·Î ÀÎÇØ ÀÏÀ» ÇÏÁö ¸øÇÑ ±Ù¹« ÀÏ¼ö Áõ°¡
-					hartals[j] = true; // ÇØ´ç ³¯Â¥ ÈŞ¾÷
+				if (h > p / 2 || ((p & 1) == 0 && h >= p / 2)) { // ë°˜ ì´ìƒ ì°¬ì„±í•˜ë©´
+					lost++;	// ë™ë§¹ íœ´ì—…ìœ¼ë¡œ ì¸í•´ ì¼ì„ í•˜ì§€ ëª»í•œ ê·¼ë¬´ ì¼ìˆ˜ ì¦ê°€
+					hartals[j] = true; // í•´ë‹¹ ë‚ ì§œ íœ´ì—…
 				}
 			}
 			System.out.println("Lost: " + lost);
