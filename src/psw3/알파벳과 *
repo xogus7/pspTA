@@ -3,8 +3,7 @@ package psw3;
 import java.io.*;
 import java.util.*;
 
-// ³­ÀÌµµ Á¶Á¤ p3 »èÁ¦, ÇØ´ç ¹®Á¦ p1À¸·Î Ãß°¡ p1 -> p2, p2 -> p3
-public class p4 {
+public class p1 { // ì•ŒíŒŒë²³ê³¼ *
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -13,13 +12,13 @@ public class p4 {
 			Deque<Character> d = new ArrayDeque<>();
 			for(int i = 0; i < line.length(); i++) {
 				char c = line.charAt(i);
-				if(c == '*') {		// *ÀÌ ÀÔ·ÂµÇ¸é
-					if(!d.isEmpty()) d.pollLast(); // ÃÖ±Ù¿¡ µé¾î¿Â °Å »Ì±â
+				if(c == '*') {		// *ì´ ìž…ë ¥ë˜ë©´
+					if(!d.isEmpty()) d.pollLast(); // ìµœê·¼ì— ë“¤ì–´ì˜¨ ê±° ë½‘ê¸°
 				} else
-					if(d.size() < 10) d.add(c);		// Ä«µå Ãß°¡
+					if(d.size() < 10) d.add(c);		// ì¹´ë“œ ì¶”ê°€
 			}
 			while(!d.isEmpty())
-				System.out.print(d.poll());		// ¾Õ¿¡¼­ºÎÅÍ Ãâ·Â
+				System.out.print(d.poll());		// ì•žì—ì„œë¶€í„° ì¶œë ¥
 			System.out.println();
 		}
 	}
