@@ -2,22 +2,22 @@ package psw6;
 
 import java.util.*;
 
-public class p1 {
+public class p1 { // ì‹ë£Œí’ˆ ì§„ì—´
 
 	public static void main(String[] args) throws Exception {
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
 		String name, s;
 		int d, m, y, value;
-		List<Product> list = new ArrayList<>(); // Áø¿­ÇÒ ½Ä·áÇ°
+		List<Product> list = new ArrayList<>(); // ì§„ì—´í•  ì‹ë£Œí’ˆ
 		for (int i = 0; i < n; i++) {
-			name = input.next(); // Á¦Ç°¸í
-			s = input.next();	 // À¯Åë±âÇÑ
+			name = input.next(); // ì œí’ˆëª…
+			s = input.next();	 // ìœ í†µê¸°í•œ
 			d = Integer.parseInt(s.split("/")[0]);
 			m = Integer.parseInt(s.split("/")[1]);
 			y = Integer.parseInt(s.split("/")[2]);
 			value = y * 10000 + m * 100 + d; 	// String : 29/10/2017 -> int : 20171029
-			if (value < 20171019) // 2017³â 10¿ù 19ÀÏ ÀÌÀüÀº Áø¿­ x
+			if (value < 20171019) // 2017ë…„ 10ì›” 19ì¼ ì´ì „ì€ ì§„ì—´ x
 				continue;
 			list.add(new Product(name, d, m, y, value)); 
 		}
@@ -38,10 +38,10 @@ class Product implements Comparable<Product> {
 		this.value = value;
 	}
 	public int compareTo(Product o) {
-		if (this.name.compareTo(o.name) == 0) { // ÀÌ¸§ÀÌ °°À¸¸é
-			return this.value - o.value;		// À¯Åë±âÇÑ ¿À¸§Â÷¼ø
+		if (this.name.compareTo(o.name) == 0) { // ì´ë¦„ì´ ê°™ìœ¼ë©´
+			return this.value - o.value;		// ìœ í†µê¸°í•œ ì˜¤ë¦„ì°¨ìˆœ
 		}
-		return this.name.compareTo(o.name); // ÀÌ¸§ »çÀü¼ø
+		return this.name.compareTo(o.name); // ì´ë¦„ ì‚¬ì „ìˆœ
 	}
 	public String toString() {
 		return this.name + " " + this.day + "/" + this.month + "/" + this.year;
