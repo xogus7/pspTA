@@ -2,7 +2,7 @@ package psw3;
 
 import java.util.*;
 
-public class p3 {
+public class p3 { // 버섯 뒤집기
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
