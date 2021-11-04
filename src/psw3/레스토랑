@@ -2,34 +2,34 @@ package psw3;
 
 import java.util.Scanner;
 
-public class p2 {
+public class p3 {	// ë ˆìŠ¤í† ë‘
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
-		char[] guests = new char[n];	// i¹øÂ° ÀÚ¸®¿¡ ¾É¾Æ ÀÖ´Â ¼Õ´ÔÀÇ ÀÌ¸§
-		int[] seats = new int[n];		// i¹øÂ° ÀÚ¸®¿¡ ¾É¾Æ ÀÖ´Â ¼Õ´ÔÀÇ ÀÔÀå ¹øÈ£
-		int order = 0;	// µé¾î¿Â ¼ø¼­
-		int out = 0;	// ÇöÀç ³ª°¡¾ß ÇÏ´Â ¹øÈ£
+		char[] guests = new char[n];	// ië²ˆì§¸ ìë¦¬ì— ì•‰ì•„ ìˆëŠ” ì†ë‹˜ì˜ ì´ë¦„
+		int[] seats = new int[n];		// ië²ˆì§¸ ìë¦¬ì— ì•‰ì•„ ìˆëŠ” ì†ë‹˜ì˜ ì…ì¥ ë²ˆí˜¸
+		int order = 0;	// ë“¤ì–´ì˜¨ ìˆœì„œ
+		int out = 0;	// í˜„ì¬ ë‚˜ê°€ì•¼ í•˜ëŠ” ë²ˆí˜¸
 		for (int i = 0; i < n; i++)
 			guests[i] = '#';
 		input.nextLine();
 		String s = input.nextLine();
 		for (int i = 0; i < s.length(); i += 2) {
 			char c = s.charAt(i);
-			if (c >= 'A' && c <= 'Z') {			// ¼Õ´ÔÀÌ ¿Â °æ¿ì
+			if (c >= 'A' && c <= 'Z') {			// ì†ë‹˜ì´ ì˜¨ ê²½ìš°
 				for (int j = 0; j < n; j++) {
-					if (guests[j] == '#') {		// ºóÀÚ¸® Ã£¾Æ¼­ ¾É±â
+					if (guests[j] == '#') {		// ë¹ˆìë¦¬ ì°¾ì•„ì„œ ì•‰ê¸°
 						guests[j] = c;
-						seats[j] = order++;		// ¾ÉÀº ÀÚ¸®¿¡ ¼ø¼­ ±â·Ï
+						seats[j] = order++;		// ì•‰ì€ ìë¦¬ì— ìˆœì„œ ê¸°ë¡
 						break;
 					}
 				}
 			}
 			else {
 				for (int j = 0; j < n; j++) {
-					if (seats[j] == out) {		// ³ª°¡¾ß ÇÏ´Â ¹øÈ£¸¦ Ã£°í
-						guests[j] = '#';		// ºóÀÚ¸®·Î ¸¸µé±â
+					if (seats[j] == out) {		// ë‚˜ê°€ì•¼ í•˜ëŠ” ë²ˆí˜¸ë¥¼ ì°¾ê³ 
+						guests[j] = '#';		// ë¹ˆìë¦¬ë¡œ ë§Œë“¤ê¸°
 						out++;
 						break;
 					}
