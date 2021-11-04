@@ -7,30 +7,30 @@ class Location implements Comparable<Location> {
 	public Location(int x, int y, int pX, int pY,int order) {
 		this.x = x;
 		this.y = y;
-		this.d = Math.abs(x - pX) + Math.abs(y - pY);	// ÆßÇÁ¿ÍÀÇ °Å¸®
-		this.order = order;								// ÀÔ·ÂµÈ ¼ø¼­
+		this.d = Math.abs(x - pX) + Math.abs(y - pY);	// íŒí”„ì™€ì˜ ê±°ë¦¬
+		this.order = order;								// ì…ë ¥ëœ ìˆœì„œ
 	}
-	public int compareTo(Location o) { // °´Ã¼ Á¤·Ä ±âÁØ ÀçÁ¤ÀÇ
+	public int compareTo(Location o) { // ê°ì²´ ì •ë ¬ ê¸°ì¤€ ì¬ì •ì˜
 		if(o.d == this.d)
-			return o.order - this.order;	// ¼ø¼­ ³»¸²Â÷¼ø
-		return o.d - this.d;				// °Å¸®°¡ ¸Õ °æ¿ì°¡ ¸ÕÀúÀÓÀ¸·Î °Å¸® ³»¸²Â÷¼ø
+			return o.order - this.order;	// ìˆœì„œ ë‚´ë¦¼ì°¨ìˆœ
+		return o.d - this.d;				// ê±°ë¦¬ê°€ ë¨¼ ê²½ìš°ê°€ ë¨¼ì €ì„ìœ¼ë¡œ ê±°ë¦¬ ë‚´ë¦¼ì°¨ìˆœ
 	}
 	public String toString() { return this.x + " " + this.y; }
 }
-public class p4 {
+public class p4 { // ìˆ˜ë¡œ
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
 		int m = input.nextInt();
 		int[] x = new int[n];
 		int[] y = new int[n];
-		List<Location> point = new ArrayList<>(); // ÁıµéÀÇ ÁÂÇ¥ ¸®½ºÆ®
+		List<Location> point = new ArrayList<>(); // ì§‘ë“¤ì˜ ì¢Œí‘œ ë¦¬ìŠ¤íŠ¸
 		int sum = 0;
 		for (int i = 0; i < n; i++) {
 			x[i] = input.nextInt();
 			y[i] = input.nextInt();
 		}
-		/* ÀÓ½Ã ¹è¿­À» ¶óÀÌºê·¯¸® ÇÔ¼ö·Î Á¤·Ä ÈÄ Áß¾Ó°ª ÃßÃâ */
+		/* ì„ì‹œ ë°°ì—´ì„ ë¼ì´ë¸ŒëŸ¬ë¦¬ í•¨ìˆ˜ë¡œ ì •ë ¬ í›„ ì¤‘ì•™ê°’ ì¶”ì¶œ */
 		int[] tempX = x.clone();
 		int[] tempY = y.clone();
 		Arrays.sort(tempX);
@@ -38,11 +38,11 @@ public class p4 {
 		int pumpX = tempX[n/2];
 		int pumpY = tempY[n/2];
 		
-		for (int i = 0; i < n; i++) { // °¢ ÁıÀÇ ÁÂÇ¥¿Í °Å¸®, ÀÔ·Â ¼ø¼­¸¦ ¸®½ºÆ®¿¡ Ãß°¡
+		for (int i = 0; i < n; i++) { // ê° ì§‘ì˜ ì¢Œí‘œì™€ ê±°ë¦¬, ì…ë ¥ ìˆœì„œë¥¼ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
 			point.add(new Location(x[i], y[i], pumpX, pumpY, i)); 
 			sum += point.get(i).d;
 		}
-		Collections.sort(point); // ÀçÁ¤ÀÇÇÑ ±âÁØ´ë·Î Á¤·Ä
+		Collections.sort(point); // ì¬ì •ì˜í•œ ê¸°ì¤€ëŒ€ë¡œ ì •ë ¬
 		System.out.println(sum);
 		for (int i = 0; i < n; i++)
 			if (point.get(i).d > m)
