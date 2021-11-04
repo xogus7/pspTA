@@ -2,34 +2,34 @@ package psw4;
 
 import java.io.*;
 
-public class p2 {
+public class p2 { // ë…ì¼êµ° ì•”í˜¸
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		char[][] list = new char[26][26];	// ¾ËÆÄºªÀ» ÀÎµ¦½º·Î ¹Ù·Î »ç¿ë
-		String index = br.readLine();		// Çà ¿­ ÀÌ¸§
-		String s = br.readLine();			// ±× ¾È¿¡ Ã¤¿ï ¹®ÀÚ
+		char[][] list = new char[26][26];	// ì•ŒíŒŒë²³ì„ ì¸ë±ìŠ¤ë¡œ ë°”ë¡œ ì‚¬ìš©
+		String index = br.readLine();		// í–‰ ì—´ ì´ë¦„
+		String s = br.readLine();			// ê·¸ ì•ˆì— ì±„ìš¸ ë¬¸ì
 		for (int i = 0; i < 6; i++)
-			for (int j = 0; j < 6; j++)		// 2Â÷¿ø ÀÎµ¦½º 1Â÷¿ø Ç¥±â
+			for (int j = 0; j < 6; j++)		// 2ì°¨ì› ì¸ë±ìŠ¤ 1ì°¨ì› í‘œê¸°
 				list[index.charAt(i) - 'A'][index.charAt(j) - 'A'] = s.charAt(i * 6 + j);
 		
 		while ((s = br.readLine()) != null) {
-			StringBuilder sb = new StringBuilder();	// Ãâ·Â¹®
+			StringBuilder sb = new StringBuilder();	// ì¶œë ¥ë¬¸
 			boolean error = false;
-			s = s.toUpperCase();	// ÀÔ·ÂµÈ ¹®ÀÚ¿­ ´ë¹®ÀÚ·Î Ä¡È¯
+			s = s.toUpperCase();	// ì…ë ¥ëœ ë¬¸ìì—´ ëŒ€ë¬¸ìë¡œ ì¹˜í™˜
 			for (int i = 0; i < s.length(); i++) {
 				if (s.charAt(i) == ' ')
 					sb.append(' ');
 				else {
 					if (i + 1 >= s.length() || s.charAt(i) - 'A' >= 26 || s.charAt(i + 1) - 'A' >= 26) {
-						error = true;	// ÇØµ¶ÇÒ ¹®ÀÚ°¡ È¦¼ö ¶Ç´Â ¾ËÆÄºªÀÌ ¾Æ´Ñ °æ¿ì
+						error = true;	// í•´ë…í•  ë¬¸ìê°€ í™€ìˆ˜ ë˜ëŠ” ì•ŒíŒŒë²³ì´ ì•„ë‹Œ ê²½ìš°
 						System.out.println("-ERROR-");
 						break;
 					}
-					char plain = list[s.charAt(i) - 'A'][s.charAt(i + 1) - 'A']; // Ç¥¿¡ µû¶ó ¹®ÀÚ ÇØµ¶
+					char plain = list[s.charAt(i) - 'A'][s.charAt(i + 1) - 'A']; // í‘œì— ë”°ë¼ ë¬¸ì í•´ë…
 					if (plain != '\0')
 						sb.append(plain);
-					else {		// ¾ËÆÄºªÀÌÁö¸¸ Çà ¿­ ÀÌ¸§¿¡ ¾øÀ» °æ¿ì
+					else {		// ì•ŒíŒŒë²³ì´ì§€ë§Œ í–‰ ì—´ ì´ë¦„ì— ì—†ì„ ê²½ìš°
 						error = true;
 						System.out.println("-ERROR-");
 						break;
