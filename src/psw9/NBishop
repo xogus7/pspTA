@@ -2,7 +2,7 @@ package psw9;
 
 import java.io.*;
 
-public class p1 {
+public class p1 { // NBishop
 	private static int n, r, c;
 	private static int[] pos;
 
