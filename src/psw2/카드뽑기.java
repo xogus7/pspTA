@@ -1,8 +1,6 @@
-package psw2;
-
 import java.io.*;
 
-public class p2 {	// 카드뽑기 2
+public class Main {	// 카드뽑기 2
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
