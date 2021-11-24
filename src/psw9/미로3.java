@@ -1,9 +1,7 @@
-package psw9;
-
 import java.io.*;
 import java.util.*;
 
-public class p3 { // 미로3
+public class Main { // 미로3
 	private static int[][] map;
 	private static int[][] route;
 	private static int[] dr = { 0, 1, 0, -1 }; // right, down, left, up
