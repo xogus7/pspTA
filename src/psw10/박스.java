@@ -22,11 +22,9 @@ public class Main {
 			sb.append('\n');
 			return;
 		}
-		s[select] = true;
-		if (box < n)
-			bt(select + 1, box + 1, cover);
-		s[select] = false;
-		if (cover < box)
-			bt(select + 1, box, cover + 1);
+		s[select] = true; // b 선택
+		if (box < n) bt(select + 1, box + 1, cover);
+		s[select] = false; // c 선택
+		if (cover < box) bt(select + 1, box, cover + 1);
 	}
 }
