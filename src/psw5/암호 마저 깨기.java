@@ -1,9 +1,7 @@
-package psw5;
-
 import java.io.*;
 import java.util.*;
 
-public class p3 { // 암호 마저 깨기
+public class Main { // 암호 마저 깨기
 	private static final String plainText = "the quick brown fox jumps over the lazy dog";
 	private static String[] plainWord;
 	private static String[] encryptedWord;
