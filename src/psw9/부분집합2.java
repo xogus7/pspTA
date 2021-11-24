@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class p1 { // 부분집합 2
+public class Main { // 부분집합 2
 	private static char[] s;
 	private static boolean[] check;
 	private static int n;
