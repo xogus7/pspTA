@@ -1,8 +1,6 @@
-package psw3;
-
 import java.util.Scanner;
 
-public class p2 {	// 동맹휴업
+public class Main {	// 동맹휴업
 	public static void main(String[] args) throws Exception {
 		Scanner input = new Scanner(System.in);
 		String[] week = { "SAT", "SUN", "Mon", "Tue", "Wed", "Thu", "Fri" };
