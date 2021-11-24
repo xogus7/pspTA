@@ -1,8 +1,6 @@
-package psw7;
-
 import java.io.*;
 
-public class p3 { // 파스칼의 삼각형
+public class Main { // 파스칼의 삼각형
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
