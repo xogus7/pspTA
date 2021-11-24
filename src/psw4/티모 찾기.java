@@ -1,8 +1,6 @@
-package psw4;
-
 import java.io.*;
 
-public class p3 { // 티모 찾기
+public class Main { // 티모 찾기
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int t = Integer.parseInt(br.readLine());
@@ -41,8 +39,7 @@ public class p3 { // 티모 찾기
 							different += 2;
 							continue;
 						}
-						// 대소문자 통일, 소문자일 경우 32만큼 빼서 대문자값으로 바꾼뒤 검사
-						char c = (char) (grid[row][col] < 'a' ? grid[row][col] : grid[row][col] - 32);
+						char c = (char) (grid[row][col] < 'a' ? grid[row][col] : grid[row][col] - 32); // 대소문자 통일
 						if (word.charAt(l) != c) { // 다른 글자면
 							different++;
 						}
