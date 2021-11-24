@@ -1,5 +1,3 @@
-package psw6;
-
 import java.util.*;
 
 class Team implements Comparable<Team> {
@@ -29,7 +27,7 @@ class Team implements Comparable<Team> {
 	}
 }
 
-public class p3 { // 조별리그
+public class Main { // 조별리그
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
