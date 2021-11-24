@@ -22,9 +22,7 @@ class Team implements Comparable<Team> {
 		return o.win - win;
 	}
 
-	public String toString() {
-		return name + " " + win + " " + lose + " " + GF + "-" + GA + " " + (GF - GA);
-	}
+	public String toString() { return name + " " + win + " " + lose + " " + GF + "-" + GA + " " + (GF - GA); }
 }
 
 public class Main { // 조별리그
