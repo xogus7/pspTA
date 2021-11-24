@@ -1,8 +1,6 @@
-package psw9;
-
 import java.io.*;
 
-public class p2 { // 이웃수열
+public class Main { // 이웃수열
 	private static boolean[] sequence;
 	private static boolean[] prev;
 	private static boolean[] result;
