@@ -1,8 +1,6 @@
-package psw3;
-
 import java.util.Scanner;
 
-public class p3 {	// 레스토랑
+public class Main {	// 레스토랑
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -39,5 +37,4 @@ public class p3 {	// 레스토랑
 		for (int i = 0; i < n; i++)
 			System.out.print(guests[i] + " ");
 	}
-
 }
