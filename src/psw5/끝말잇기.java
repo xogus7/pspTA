@@ -1,9 +1,7 @@
-package psw5;
-
 import java.io.*;
 import java.util.*;
 
-public class p2 { // 
+public class Main { // 끝말잇기
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,11 +16,9 @@ public class p2 { //
 			for (int i = 0; i < n; i++) {
 				word = st.nextToken();	// 현재 단어
 				if (i != 0) {
-					// 중복 단어가 아니며 끝말잇기가 성공이면
-					if (set.add(word) && word.charAt(0) == sb.charAt(sb.length() - 1))
+					if (set.add(word) && word.charAt(0) == sb.charAt(sb.length() - 1)) // 중복 단어가 아니며 끝말잇기가 성공이면
 						sb.append(" " + word);
-					else
-						break;
+					else	break;
 				} else { // 첫 단어 추가
 					sb.append(word);
 					set.add(word);
