@@ -1,8 +1,6 @@
-package psw7;
-
 import java.util.*;
 
-public class p1 { // 부분집합
+public class Main { // 부분집합
 	private static List<Integer> list;
 	private static boolean[] check;
 	private static int n;
