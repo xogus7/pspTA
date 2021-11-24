@@ -1,8 +1,6 @@
-package psw6;
-
 import java.util.*;
 
-public class p1 { // 식료품 진열
+public class Main { // 식료품 진열
 
 	public static void main(String[] args) throws Exception {
 		Scanner input = new Scanner(System.in);
@@ -39,11 +37,9 @@ class Product implements Comparable<Product> {
 	}
 	public int compareTo(Product o) {
 		if (this.name.compareTo(o.name) == 0) { // 이름이 같으면
-			return this.value - o.value;		// 유통기한 오름차순
+			return this.value - o.value;	// 유통기한 오름차순
 		}
 		return this.name.compareTo(o.name); // 이름 사전순
 	}
-	public String toString() {
-		return this.name + " " + this.day + "/" + this.month + "/" + this.year;
-	}
+	public String toString() { return this.name + " " + this.day + "/" + this.month + "/" + this.year; }
 }
