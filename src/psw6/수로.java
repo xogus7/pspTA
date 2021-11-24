@@ -1,5 +1,3 @@
-package psw6;
-
 import java.util.*;
 
 class Location implements Comparable<Location> {
@@ -8,16 +6,16 @@ class Location implements Comparable<Location> {
 		this.x = x;
 		this.y = y;
 		this.d = Math.abs(x - pX) + Math.abs(y - pY);	// 펌프와의 거리
-		this.order = order;								// 입력된 순서
+		this.order = order;				// 입력된 순서
 	}
 	public int compareTo(Location o) { // 객체 정렬 기준 재정의
 		if(o.d == this.d)
-			return o.order - this.order;	// 순서 내림차순
-		return o.d - this.d;				// 거리가 먼 경우가 먼저임으로 거리 내림차순
+			return o.order - this.order;	// 입력 순서 내림차순
+		return o.d - this.d;			// 거리 내림차순
 	}
 	public String toString() { return this.x + " " + this.y; }
 }
-public class p4 { // 수로
+public class Main { // 수로
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
