@@ -1,5 +1,3 @@
-package psw9;
-
 import java.io.*;
 
 public class p1 { // NBishop
