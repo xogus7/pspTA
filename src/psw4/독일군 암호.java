@@ -1,16 +1,14 @@
-package psw4;
-
 import java.io.*;
 
-public class p2 { // 독일군 암호
+public class Main { // 독일군 암호
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		char[][] list = new char[26][26];	// 알파벳을 인덱스로 바로 사용
 		String index = br.readLine();		// 행 열 이름
-		String s = br.readLine();			// 그 안에 채울 문자
+		String s = br.readLine();		// 그 안에 채울 문자
 		for (int i = 0; i < 6; i++)
-			for (int j = 0; j < 6; j++)		// 2차원 인덱스 1차원 표기
+			for (int j = 0; j < 6; j++)
 				list[index.charAt(i) - 'A'][index.charAt(j) - 'A'] = s.charAt(i * 6 + j);
 		
 		while ((s = br.readLine()) != null) {
@@ -37,8 +35,7 @@ public class p2 { // 독일군 암호
 					i++;
 				}
 			}
-			if (!error)
-				System.out.println(sb);
+			if (!error) System.out.println(sb);
 		}
 	}
 }
