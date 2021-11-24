@@ -1,8 +1,6 @@
-package psw4;
-
 import java.util.Scanner;
 
-public class p1 { // anagram
+public class Main { // anagram
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
