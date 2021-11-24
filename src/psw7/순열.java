@@ -1,8 +1,6 @@
-package psw7;
-
 import java.util.*;
 
-public class p2 { // 순열
+public class Main { // 순열
 	private static char[] s;
 	private static char[] result;
 	private static Set<String> set;
